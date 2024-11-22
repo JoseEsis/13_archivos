@@ -1,0 +1,4 @@
+22143256J 5 46.7 Ampliacion de memoria 2Gb
+80867543K 1 23 Lector de DNI
+65346678B 2 213.95 Disco esterno 2Tb
+X
