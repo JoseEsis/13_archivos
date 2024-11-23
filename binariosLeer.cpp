@@ -1,15 +1,22 @@
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 const int MAX = 80;
 struct tRegistro{
-	int codigo;
+	int cod;
 	char item[MAX];
-	double valor;
+	double val;
 };
 int SIZE = sizeof(tRegistro);
 
+void mostrar(const tRegistro& registro) {
+    
+    cout << registro.cod << " - " << registro.item 
+         << " - " << fixed << setprecision(2) 
+         << registro.val << " euros" << endl;
+}
 int main(){
 	tRegistro registro;
 	fstream archivo;
@@ -19,8 +26,8 @@ int main(){
 	while (cuantos ==SIZE)
 	{
 		mostrar(registro);
-		archivo.read((char *)) &registro, SIZE);
-		cuantos = archio.gcount();
+		archivo.read((char *) &registro, SIZE);
+		cuantos = archivo.gcount();
 	}
 	archivo.close();
 	return 0;
